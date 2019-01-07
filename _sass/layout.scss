@@ -1,55 +1,12 @@
-#main-nav, #secondary {
-	margin: 0 0.75em*$lh;
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
-.page {
-	padding: 1em*$lh 0.75em*$lh 2em*$lh;
-}
-
-article {
-	font-size: 1.2em;
-  max-width: 45em;
-	padding: 0.5em*$lh 0.5em*$lh 1em*$lh;
-  header {
-  	h1, h2, h3, h4 {
-  		margin: 0;
-  	}
-  	h4 {
-			font-weight: normal;
-			font-size: .8em;
-			color: $brand-500;
-			a {
-				color: inherit;
-			}
-  	}
-  	margin: 1em*$lh 0;
-  }
-}
-
-@media screen and (min-width: 55em) {
-	#main {
-		display: grid;
-		grid-template-columns: 7fr 3fr;
-		grid-template-areas: "main sidebar";
-		margin: 0;
-		& > article {
-			grid-area: main;
-		}
-		#nav {
-			grid-area: sidebar;
-		}
-	}
-	#main.wide {
-		display: block;
-	}
-	.page {
-		margin: 0 2em;
-		padding: 0 1em*$lh 2em*$lh;
-		position: relative;
-	}
-  article {
-		margin: 0 0 0 2em;
-		padding: 1.5em*$lh 2em*$lh;
-		position: relative;
+[role=main] {
+  margin: 12px;
+  * + * {
+    margin-top: 12px;
   }
 }

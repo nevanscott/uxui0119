@@ -1,17 +1,14 @@
-<header class="page-header">
-  <div class="info">
-    <h1>
-      <a href="{{ site.baseurl }}/">
-        {{ site.data.course.abbreviation }}
-        <small>{{ site.data.course.iteration }}</small>
-      </a>
-    </h1>
-	</div>
-  <div class="search">
-    <input type="search" inputmode="search" spellcheck="false" id="search-input" placeholder="Search...">
-    <ul id="results-container"></ul>
+<header role="banner">
+  <a class="logo" href="{{ site.baseurl }}/">
+    {{ site.data.course.abbreviation }}
+    <small>{{ site.data.course.iteration }}</small>
+  </a>
+  <div id="menutoggle" class="toggle">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="line line-3"></div>
   </div>
-  <nav>
+  <nav id="mainmenu">
     {% for item in site.data.course.nav -%}
 
       {%- assign item_url = item | prepend:"/" | append:"/" | replace:"HOME/","" -%}
@@ -19,9 +16,9 @@
       {%- assign section_slug = url_parts[1] -%}
 
       {%- if item_url == page.url -%}
-        {%- assign c = "current" -%}
+        {%- assign c = "active" -%}
       {%- elsif item == section_slug -%}
-        {%- assign c = "current" -%}
+        {%- assign c = "active" -%}
       {%- else -%}
         {%- assign c = "" -%}
       {%- endif -%}
@@ -39,4 +36,29 @@
 
     {%- endfor %}
   </nav>
+  <script>
+    document.getElementById('menutoggle').addEventListener('click', function() {
+      console.log('This is a test.');
+      document.getElementById('mainmenu').classList.toggle('active');
+    });
+  </script>
 </header>
+
+<!--
+<header class="page-header">
+  <div class="info">
+    <h1>
+      <a href="{{ site.baseurl }}/">
+        {{ site.data.course.abbreviation }}
+        <small>{{ site.data.course.iteration }}</small>
+      </a>
+    </h1>
+	</div>
+  <div class="search">
+    <input type="search" inputmode="search" spellcheck="false" id="search-input" placeholder="Search...">
+    <ul id="results-container"></ul>
+  </div>
+  <nav>
+  </nav>
+</header>
+-->
