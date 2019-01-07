@@ -1,19 +1,13 @@
-.tags {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: .875em;
-  font-weight: 500;
-}
-
-.tags li {
+ul.tags {
   display: inline;
-  margin-right: 0.75em;
-  white-space: nowrap;
-  &::before {
-    display: inline;
-    content: "# ";
-    color: $brand-500;
+  margin: 0;
+  li {
+    display: inline-block;
+    border: 1px solid;
+    color: black;
+    font-size: smaller;
+    padding: 2px 8px;
+    border-radius: 1em;
   }
 }
 

@@ -1,18 +1,18 @@
-.page-footer {
-  border-top: solid 1px $neutral-100;
-  color: $neutral-700;
-  padding: 1em 0.75em*$lh;
-  p {
-    margin: 0.25em*$lh 0;
-  }
-  a {
-    color: inherit;
-  }
-}
+// FIXME: This should be handled globally, but that wasn't working
+@import 'mixins';
 
-@media screen and (min-width: 55em) {
-	.page-footer {
-		padding: 1em 2em*$lh;
-    margin-top: 0;
-	}
+[role=contentinfo] {
+  @include pattern-checked(3px);
+  border-top: 1px solid;
+  padding: 12px;
+  min-height: 56px / 2 + 32px;
+  box-sizing: border-box;
+  margin-top: 56px * 2 / 3;
+  display: flex;
+  align-items: center;
+  > * {
+    background-color: white;
+    padding: 0 4px;
+    margin-right: 8px;
+  }
 }

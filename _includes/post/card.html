@@ -1,0 +1,7 @@
+<div class="{{ include.class }}">
+  <a href="{{ site.baseurl }}{{ post.url }}">
+    <div class="label">{{ include.label }}</div>
+    <div class="title">{{ post.title | smartify }}</div>
+    <div class="description">{{ post.description | markdownify }}</div>
+  </a>
+</div>
