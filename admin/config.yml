@@ -1,0 +1,14 @@
+backend:
+  name: git-gateway
+  branch: master
+publish_mode: editorial_workflow
+collections:
+  - name: "lessons"
+    label: "Lessons"
+    folder: "_lessons"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Day", name: "day", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
